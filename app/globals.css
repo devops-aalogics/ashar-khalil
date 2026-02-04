@@ -2,65 +2,79 @@
 
 @layer base {
   :root {
-    --background: 220 14% 96%;
-    --foreground: 222 47% 11%;
+    /* Deep Navy & Gold Palette - Light Mode (or Default) */
+    /* Although we are going for a dark premium look, we define light mode variables or mapped them to our primary dark theme if we forced dark mode. 
+       Let's stick to the plan of a "Premium Corporate" aesthetic which is primarily dark. 
+       So we will set the default root variables to be the dark theme or ensure the dark class is applied. */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --background: 222 47% 11%;
+    /* Deep Navy */
+    --foreground: 210 40% 98%;
+    /* Off-white Text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --card: 222 47% 13%;
+    /* Slightly lighter Navy */
+    --card-foreground: 210 40% 98%;
 
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --secondary: 48 100% 50%;
-    --secondary-foreground: 222 47% 11%;
+    --primary: 43 74% 49%;
+    /* Gold/Bronze #d9a526 - Adjusted for HSL */
+    --primary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 217 33% 17%;
+    /* Muted Navy for secondary elements */
+    --secondary-foreground: 210 40% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --accent: 43 74% 49%;
+    /* Gold Accent */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 43 74% 49%;
+    /* Gold Ring */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Since the default is the dark theme, we can repeat or refine for dark mode specific adjustments if needed. 
+       For now, we map them identically to ensure consistency. */
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 74% 49%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 74% 49%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 43 74% 49%;
   }
 }
 
@@ -101,6 +115,16 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight font-serif;
   }
 }
 
